@@ -5,7 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
-const ChatComponent = () => {
+const Chat = () => {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -80,4 +80,4 @@ const ChatComponent = () => {
   );
 };
 
-export default ChatComponent;
+export default Chat;

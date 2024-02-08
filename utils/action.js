@@ -17,11 +17,20 @@ export const generateChatResponse = async (chatMessages) => {
       ],
       model: "gpt-3.5-turbo",
       temperature: 0.7,
-      
     });
     return response.choices[0].message;
   } catch (error) {
     console.log(error);
     return null;
   }
+};
+
+export const getExistingTours = async ({ provinsi, kota }) => {
+  return "awesome";
+};
+export const generateTourResponse = async ({ provinsi, kota }) => {
+  return null;
+};
+export const createNewTours = async ({ provinsi, kota }) => {
+  return "awesome";
 };
