@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgb(248, 248, 248);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(50, 54, 80);
+  border-radius: 10px;
+}

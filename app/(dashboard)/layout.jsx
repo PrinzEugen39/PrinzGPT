@@ -13,7 +13,7 @@ const DahsboardLayout = ({ children }) => {
         >
           <FaBarsStaggered className="w-8 h-8 text-primary" />
         </label>
-        <div className="min-h-screen px-8 py-12 bg-base-200">{children}</div>
+        <div className="min-h-screen px-8 bg-base-200">{children}</div>
       </div>
 
       <div className="drawer-side">
