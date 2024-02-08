@@ -1,9 +1,6 @@
-function TourInfo() {
-  return (
-    <div>
-      TourInfo
-    </div>
-  )
+function TourInfo({ tour }) {
+  console.log("TOUR INFO", tour);
+  return <div>TourInfo</div>;
 }
 
-export default TourInfo
+export default TourInfo;

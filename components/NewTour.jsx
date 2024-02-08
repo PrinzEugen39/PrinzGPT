@@ -46,14 +46,14 @@ function NewTour() {
           <input
             type="text"
             className="w-full join-item input input-bordered"
-            placeholder="Provinsi"
-            name="provinsi"
+            placeholder="Kota"
+            name="kota"
           />
           <input
             type="text"
             className="w-full join-item input input-bordered"
-            placeholder="Kota"
-            name="kota"
+            placeholder="Provinsi"
+            name="provinsi"
           />
           <button type="submit" className="join-item btn btn-primary">
             Tampilkan hasil
