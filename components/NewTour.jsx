@@ -1,25 +1,55 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
-import TourInfo from "./TourInfo";
-import { generateTourResponse } from "@/utils/action";
+import {
+  createNewTours,
+  fetchUserTokenById,
+  generateTourResponse,
+  getExistingTours,
+  updateTokens,
+} from "@/utils/action";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import TourInfo from "./TourInfo";
+import { useAuth } from "@clerk/nextjs";
 
 function NewTour() {
+  const queryClient = useQueryClient();
+
+  const { userId } = useAuth();
+
   const {
     mutate,
     isPending,
     data: tour,
   } = useMutation({
     mutationFn: async (destination) => {
-      const newTour = await generateTourResponse(destination);
+      const existingTour = await getExistingTours(destination);
 
-      if (newTour) {
-        return newTour;
+      if (existingTour) {
+        return existingTour;
       }
 
-      toast.error("No matching province or city, try again later");
-      return null;
+      const currentTokens = await fetchUserTokenById(userId);
+
+      if (currentTokens < 100) {
+        toast.error("Not enough tokens");
+        return;
+      }
+
+      const newTour = await generateTourResponse(destination);
+
+      if (!newTour) {
+        toast.error("No matching province or city, try again later");
+        return null;
+      }
+
+      const res = await createNewTours(newTour.tour);
+      queryClient.invalidateQueries({ queryKey: ["tours"] });
+      const newTokens = await updateTokens(userId, newTour.tokens);
+      toast.success(
+        `Tour created successfully, tokens remaining: ${newTokens}`
+      );
+      return res;
     },
   });
 

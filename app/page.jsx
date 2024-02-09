@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const desc =
   "Unleash the power of conversational AI with PrinzGPT! Engage in dynamic and natural conversations, ask questions, and explore the capabilities of state-of-the-art language models. Our platform is designed to provide a seamless and interactive chat experience";

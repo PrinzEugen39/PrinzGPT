@@ -1,16 +1,16 @@
 export default function tourQuery(city, province) {
-  return `Find a exact ${city} in this exact ${province}.
-If ${city} and ${province} exist, create a list of things families can do in this ${city},${province}. 
-Once you have a list, create a one-day tour. Response should be  in the following JSON format: 
-{
-  "tour": {
-    "city": "${city}",
-    "province": "${province}",
-    "title": "title of the tour",
-    "description": "short description of the city and tour",
-    "stops": ["short paragraph on the stop 1 ", "short paragraph on the stop 2","short paragraph on the stop 3"]
+  return `Temukan ${city} yang tepat di ${province} ini di Indonesia.
+  Jika ${city} dan ${province} ada, buatlah daftar hal-hal yang dapat dilakukan keluarga di ${city},${province} ini.
+  Setelah Anda memiliki daftarnya, buatlah tur satu hari. Respons harus dalam format JSON berikut:
+  {
+    "tour": {
+      "city": "${city}",s
+      "province": "${province}",
+      "title": "Judul tur",
+      "description": "deskripsi singkat tentang kota dan wisata",
+      "stops": ["paragraf pendek di pemberhentian 1", "paragraf pendek di pemberhentian 2", "paragraf pendek di pemberhentian 3"]
+    }
   }
-}
-"stops" property should include only three stops.
-If you can't find info on exact ${city}, or ${city} does not exist, or it's population is less than 1, or it is not located in the following ${province},   return { "tour": null }, with no additional characters.`;
+  Properti "stops" harus mencakup hanya tiga perhentian.
+  Jika Anda tidak dapat menemukan informasi mengenai ${city} secara pasti, atau ${city} tidak ada, atau populasinya kurang dari 1, atau lokasinya tidak berada di ${province} berikut atau di luar Indonesia, return { "tour": null }, tanpa karakter tambahan.`;
 }
