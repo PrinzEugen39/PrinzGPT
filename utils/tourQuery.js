@@ -8,9 +8,9 @@ export default function tourQuery(city, province) {
       "province": "${province}",
       "title": "Judul tur",
       "description": "deskripsi singkat tentang kota dan wisata",
-      "stops": ["paragraf pendek di pemberhentian 1", "paragraf pendek di pemberhentian 2"]
+      "stops": ["pemberhentian 1", "pemberhentian 2", "pemberberhentian 3"]
     }
   }
-  Properti "stops" harus mencakup hanya dua perhentian.
+  Properti "stops" harus mencakup hanya tiga perhentian.
   Jika Anda tidak dapat menemukan informasi mengenai ${city} secara pasti, atau ${city} tidak ada, atau populasinya kurang dari 1, atau lokasinya tidak berada di ${province} berikut atau di luar Indonesia, return { "tour": null }, tanpa karakter tambahan.`;
 }

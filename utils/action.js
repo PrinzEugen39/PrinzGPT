@@ -151,9 +151,7 @@ export const fetchUserTokenById = async (clerkId) => {
     },
   });
 
-  console.log(result);
-
-  return result.tokens;
+  return result?.tokens;
 };
 
 export const createUserToken = async (clerkId, tokens) => {
