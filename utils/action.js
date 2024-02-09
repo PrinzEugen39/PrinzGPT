@@ -20,8 +20,8 @@ export const generateChatResponse = async (chatMessages) => {
         ...chatMessages,
       ],
       model: "gpt-3.5-turbo",
-      temperature: 0.7,
-      max_tokens: 150,
+      temperature: 0.1,
+      max_tokens: 200,
     });
     return {
       message: response.choices[0].message,
