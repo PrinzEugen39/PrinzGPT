@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const desc =
-  "Unleash the power of conversational AI with PrinzGPT! Engage in dynamic and natural conversations, ask questions, and explore the capabilities of state-of-the-art language models. Our platform is designed to provide a seamless and interactive chat experience";
+  "An AI chat app using OpenAI's GPT-3.5-turbo model. Helpful for finding and sumarizing landmark and vacation places around Indonesia 🇮🇩";
 
 const Homepage = () => {
   const [loading, setLoading] = useState(false);
