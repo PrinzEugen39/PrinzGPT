@@ -49,8 +49,8 @@ const Chat = () => {
 
   return (
     <div className="flex flex-col justify-between min-h-screen md:px-10 md:pt-8">
-      <div className="flex flex-col items-center h-full px-4 pt-6 overflow-x-hidden overflow-y-auto md:px-10">
-        <span className="text-2xl font-semibold text-secondary">Messages</span>
+      <div className="flex flex-col items-center h-full pt-6 overflow-x-hidden overflow-y-auto md:px-10">
+        <span className="pl-2 text-2xl font-semibold text-secondary">Messages</span>
         {messages.map((message, index) => {
           const avatar = message.role === "assistant" ? "🤖" : "👨";
           const bg =
@@ -62,7 +62,7 @@ const Chat = () => {
               className={`${bg} flex gap-6 py-6 mx-8 px-4 text-lg leading-loose border-b border-base-300 w-full`}
             >
               <span className="w-8">{avatar}</span>
-              <p className="max-w-5xl">{message.content}</p>
+              <p className="max-w-5xl text-pretty">{message.content}</p>
             </div>
           );
         })}
