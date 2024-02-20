@@ -48,8 +48,8 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between max-h-screen min-h-screen px-10 pt-8">
-      <div className="flex flex-col items-center px-4 overflow-x-hidden overflow-y-auto md:px-10">
+    <div className="flex flex-col justify-between min-h-screen md:px-10 md:pt-8">
+      <div className="flex flex-col items-center h-full px-4 pt-6 overflow-x-hidden overflow-y-auto md:px-10">
         <span className="text-2xl font-semibold text-secondary">Messages</span>
         {messages.map((message, index) => {
           const avatar = message.role === "assistant" ? "🤖" : "👨";
@@ -70,7 +70,7 @@ const Chat = () => {
           <span className="pt-32 loading loading-lg loading-infinity"></span>
         ) : null}
       </div>
-      <div className="min-w-max">
+      <div className="pb-2 min-w-max">
         <form onSubmit={handleSubmit} className="max-w-4xl py-8 mx-auto">
           <div className="w-full join">
             <input
