@@ -15,12 +15,12 @@ export const generateChatResponse = async (chatMessages) => {
       messages: [
         {
           role: "system",
-          content: "You are an experienced guide for indonesian tours",
+          content: "You are an experienced guide for indonesian tours, use Indonesia as your target language",
         },
         ...chatMessages,
       ],
       model: "gpt-3.5-turbo",
-      temperature: 0.1,
+      temperature: 0.6,
       max_tokens: 300,
     });
     return {
